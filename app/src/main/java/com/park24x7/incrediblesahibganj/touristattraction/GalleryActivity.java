@@ -9,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.android.volley.Request;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 
 public class GalleryActivity extends AppCompatActivity {
 
-    private String TAG = TouristAttactionActivity.class.getSimpleName();
+    private String TAG = TouristAttactionListActivity.class.getSimpleName();
     private static final String endpoint = "https://api.androidhive.info/json/glide.json";
     private ArrayList<Image> images;
     private ProgressDialog pDialog;
@@ -36,12 +37,23 @@ public class GalleryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_gallery);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 

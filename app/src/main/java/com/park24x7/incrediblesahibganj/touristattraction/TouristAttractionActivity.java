@@ -1,14 +1,16 @@
-package com.park24x7.incrediblesahibganj.atm;
+package com.park24x7.incrediblesahibganj.touristattraction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.park24x7.incrediblesahibganj.R;
 
-public class ATMActivity extends AppCompatActivity {
+public class TouristAttractionActivity extends AppCompatActivity {
+
     private Context mContext;
 
     @Override
@@ -21,12 +23,16 @@ public class ATMActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atm);
-        mContext = ATMActivity.this;
+
+        setContentView(R.layout.activity_tourist_attraction);
+        mContext = TouristAttractionActivity.this;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+    }
 
+    public void onGalleryClick(View view) {
+        startActivity(new Intent(mContext, GalleryActivity.class));
     }
 }

@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.park24x7.incrediblesahibganj">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".application.AppController"
+        android:name=".network.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.SplashActivity"
-            android:screenOrientation="portrait"
+            android:name=".activity.WelcomeActivity"
+            android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,16 +25,29 @@
         </activity>
         <activity
             android:name=".activity.LandingActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name=".touristattraction.TouristAttactionActivity"
-            android:screenOrientation="portrait"
+            android:name=".touristattraction.TouristAttactionListActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.ActionBar"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".touristattraction.GalleryActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.ActionBar"
             android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".atm.ATMActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.ActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".touristattraction.TouristAttractionActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.ActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
 
     </application>
 

@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.park24x7.incrediblesahibganj.R;
 import com.park24x7.incrediblesahibganj.atm.ATMActivity;
-import com.park24x7.incrediblesahibganj.touristattraction.TouristAttactionActivity;
+import com.park24x7.incrediblesahibganj.touristattraction.TouristAttactionListActivity;
 
 public class LandingActivity extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class LandingActivity extends AppCompatActivity {
     }
 
     public void onTouristAttractionClick(View view) {
-        startActivity(new Intent(mContext, TouristAttactionActivity.class));
+        startActivity(new Intent(mContext, TouristAttactionListActivity.class));
     }
 
     public void onATMClick(View view) {

@@ -14,16 +14,22 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:layout_weight="1"
+            android:background="@drawable/blue_btn_selector"
             android:onClick="onTouristAttractionClick"
-            android:text="Tourist Attraction" />
+            android:text="Tourist Attraction"
+            android:textColor="@color/white" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:layout_weight="1"
+            android:background="@drawable/blue_btn_selector"
             android:onClick="onATMClick"
-            android:text="ATM" />
+            android:text="ATM"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -36,16 +42,22 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:layout_weight="1"
+            android:background="@drawable/blue_btn_selector"
             android:onClick="onHotelAndRestClick"
-            android:text="@string/hotelsandrestaurants" />
+            android:text="@string/hotelsandrestaurants"
+            android:textColor="@color/white" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:layout_weight="1"
+            android:background="@drawable/blue_btn_selector"
             android:onClick="onRailwayStnClick"
-            android:text="Railway Station" />
+            android:text="Railway Station"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,31 +70,41 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:layout_weight="1"
+            android:background="@drawable/blue_btn_selector"
             android:onClick="onBusStopClick"
-            android:text="BUs Stop" />
+            android:text="Bus Stop"
+            android:textColor="@color/white" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:layout_weight="1"
+            android:background="@drawable/blue_btn_selector"
             android:onClick="onCinemaHallClick"
-            android:text="Cinema Hall" />
+            android:text="Cinema Hall"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
+
         android:orientation="horizontal"
         android:weightSum="2">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="7dp"
             android:layout_weight="1"
+            android:background="@drawable/blue_btn_selector"
             android:onClick="onBankClick"
-            android:text="Bank" />
+            android:text="Bank"
+            android:textColor="@color/white" />
 
 
     </LinearLayout>
