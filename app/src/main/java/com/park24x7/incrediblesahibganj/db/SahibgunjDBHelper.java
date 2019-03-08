@@ -32,7 +32,7 @@ public class SahibgunjDBHelper extends SQLiteOpenHelper implements DBConstants {
         int total = createStatements.length;
         for (int i = 0; i < total; i++) {
             Log.i(TAG, "executing create query " + createStatements[i]);
-            Log.i("Database", "Offline History Database created");
+            Log.i("Database", "Database created");
             db.execSQL(createStatements[i]);
         }
     }
@@ -60,7 +60,8 @@ public class SahibgunjDBHelper extends SQLiteOpenHelper implements DBConstants {
 
         // Tourist Attraction table -> _id , touristAttractionID, touristAttractionName, touristAttractionDescription, touristAttractionLatitude,  touristAttractionLatitude
         String touristAttractionTableStatement = CREATE_TABLE_BASE + TOURIST_ATTRACTION_TABLE + START_COLUMN + _ID + INTEGER + PRIMARY_KEY
-                + AUTO_INCREMENT + COMMA + TOURIST_ATTRACTION_ID + TEXT + COMMA + TOURIST_ATTRACTION_NAME + TEXT + COMMA + UNIQUE + START_COLUMN
+                + AUTO_INCREMENT + COMMA + TOURIST_ATTRACTION_ID + TEXT + COMMA + TOURIST_ATTRACTION_DESCRIPTION + TEXT + COMMA + TOURIST_ATTRACTION_LATITUDE + TEXT + COMMA +
+                TOURIST_ATTRACTION_LONGITUDE + TEXT + COMMA + TOURIST_ATTRACTION_NAME + TEXT + COMMA + UNIQUE + START_COLUMN
                 + TOURIST_ATTRACTION_ID + FINISH_COLUMN + ON_CONFLICT_REPLACE + FINISH_COLUMN;
 
         // Picture table -> _id , muId , threadId , image , latitude, longitude , comments , keywords ,

@@ -73,6 +73,7 @@ public class TouristAttractionDB implements DBConstants {
                     do {
                         TouristAttraction touristAttraction = new TouristAttraction();
                         touristAttraction.id = cur.getString(cur.getColumnIndex(DBConstants.TOURIST_ATTRACTION_ID));
+                        touristAttraction.name = cur.getString(cur.getColumnIndex(DBConstants.TOURIST_ATTRACTION_NAME));
                         touristAttraction.description = cur.getString(cur.getColumnIndex(DBConstants.TOURIST_ATTRACTION_DESCRIPTION));
                         touristAttraction.latitude = cur.getString(cur.getColumnIndex(DBConstants.TOURIST_ATTRACTION_LATITUDE));
                         touristAttraction.longitude = cur.getString(cur.getColumnIndex(DBConstants.TOURIST_ATTRACTION_LONGITUDE));
@@ -103,7 +104,6 @@ public class TouristAttractionDB implements DBConstants {
                     do {
                         ImageClass image = new ImageClass();
                         image.setBase64value(cur.getString(cur.getColumnIndex(DBConstants.PICTURE)));
-
                         imageArray.add(image);
                     } while (cur.moveToNext());
                 }

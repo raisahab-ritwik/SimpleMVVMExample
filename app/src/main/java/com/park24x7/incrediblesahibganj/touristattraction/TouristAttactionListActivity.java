@@ -12,6 +12,10 @@ import android.widget.ListView;
 
 import com.park24x7.incrediblesahibganj.R;
 import com.park24x7.incrediblesahibganj.adapter.TouristAttractionAdapter;
+import com.park24x7.incrediblesahibganj.data.TouristAttactionData;
+import com.park24x7.incrediblesahibganj.model.TouristAttraction;
+
+import java.util.ArrayList;
 
 public class TouristAttactionListActivity extends AppCompatActivity {
 
@@ -34,18 +38,19 @@ public class TouristAttactionListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tourist_attraction_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle("");
         mContext = TouristAttactionListActivity.this;
         lv_tourist_attraction = (ListView) findViewById(R.id.lv_tourist_attraction);
-        adapter = new TouristAttractionAdapter(mContext);
+        final ArrayList<TouristAttraction> touristAttractions = TouristAttactionData.getTouristAttractions(mContext);
+        adapter = new TouristAttractionAdapter(mContext, touristAttractions);
         lv_tourist_attraction.setAdapter(adapter);
         lv_tourist_attraction.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(mContext, TouristAttractionActivity.class);
+                intent.putExtra("touristAttraction", touristAttractions.get(i));
                 startActivity(intent);
             }
         });
     }
 }
-
-

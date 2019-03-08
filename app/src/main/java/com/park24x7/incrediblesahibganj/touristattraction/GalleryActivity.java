@@ -18,8 +18,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.park24x7.incrediblesahibganj.R;
 import com.park24x7.incrediblesahibganj.adapter.GalleryAdapter;
-import com.park24x7.incrediblesahibganj.application.AppController;
 import com.park24x7.incrediblesahibganj.model.Image;
+import com.park24x7.incrediblesahibganj.network.AppController;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -106,14 +106,13 @@ public class GalleryActivity extends AppCompatActivity {
                                 JSONObject object = response.getJSONObject(i);
                                 Image image = new Image();
                                 image.setName(object.getString("name"));
-
                                 JSONObject url = object.getJSONObject("url");
                                 image.setSmall(url.getString("small"));
                                 image.setMedium(url.getString("medium"));
                                 image.setLarge(url.getString("large"));
                                 image.setTimestamp(object.getString("timestamp"));
-
-                                images.add(image);
+                                if (i != 0)
+                                    images.add(image);
 
                             } catch (JSONException e) {
                                 Log.e(TAG, "Json parsing error: " + e.getMessage(), e);

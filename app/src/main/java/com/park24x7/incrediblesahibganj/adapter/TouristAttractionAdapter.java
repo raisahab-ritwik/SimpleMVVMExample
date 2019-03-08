@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.park24x7.incrediblesahibganj.R;
 import com.park24x7.incrediblesahibganj.data.Dummy;
+import com.park24x7.incrediblesahibganj.data.TouristAttactionData;
 import com.park24x7.incrediblesahibganj.model.TouristAttraction;
 
 import java.util.ArrayList;
@@ -19,10 +20,11 @@ public class TouristAttractionAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private ArrayList<TouristAttraction> touristAttractions = new ArrayList<>();
 
-    public TouristAttractionAdapter(Context mContext) {
+    public TouristAttractionAdapter(Context mContext, ArrayList<TouristAttraction> touristAttractions) {
         this.mContext = mContext;
         mInflater = LayoutInflater.from(mContext);
-        touristAttractions = Dummy.getDummyTouristAttractions();
+        //touristAttractions = Dummy.getDummyTouristAttractions();
+        this.touristAttractions = touristAttractions;
     }
 
     @Override

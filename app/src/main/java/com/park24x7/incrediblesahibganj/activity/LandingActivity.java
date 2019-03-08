@@ -30,6 +30,7 @@ public class LandingActivity extends AppCompatActivity {
 
         startActivity(new Intent(mContext, ATMActivity.class));
 
+
     }
 
     public void onHotelAndRestClick(View view) {
@@ -52,3 +53,5 @@ public class LandingActivity extends AppCompatActivity {
 
     }
 }
+
+

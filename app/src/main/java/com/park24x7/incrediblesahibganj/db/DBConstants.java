@@ -1,12 +1,14 @@
 package com.park24x7.incrediblesahibganj.db;
 
 
+import android.os.Environment;
+
 public interface DBConstants {
 
     public static final int DB_VERSION = 1; // 7th Sept 2018
 
-    public static final String DB_NAME = "IncredibleSahibganj.db";
-    /* public static final String DB_NAME = Environment.getExternalStorageDirectory() + "/IncredibleSahibganj.db";*/ //This is for debugging purpose only
+    //public static final String DB_NAME = "IncredibleSahibganj.db";
+    public static final String DB_NAME = Environment.getExternalStorageDirectory() + "/IncredibleSahibganj.db"; //This is for debugging purpose only
 
     public static final String _ID = "_id";
 
