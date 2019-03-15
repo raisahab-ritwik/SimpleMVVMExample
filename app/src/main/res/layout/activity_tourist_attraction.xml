@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="13dp">
@@ -19,27 +20,64 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-
-                android:text="GPS Navigation" />
+                android:background="@drawable/blue_gradient_btn_slelctor"
+                android:paddingLeft="21dp"
+                android:paddingRight="21dp"
+                android:text="GPS Navigation"
+                android:textColor="@color/white" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_gravity="right"
+                android:background="@drawable/blue_gradient_btn_slelctor"
                 android:onClick="onGalleryClick"
-                android:text="Gallery" />
+                android:paddingLeft="21dp"
+                android:paddingRight="21dp"
+                android:text="Image Gallery"
+                android:textColor="@color/white" />
         </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_description"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:orientation="vertical">
 
+                <!--<View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_large" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/grey_soft" />-->
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_fts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    app:cardCornerRadius="@dimen/spacing_medium"
+                    app:cardElevation="@dimen/spacing_xsmall"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="13dp"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="13dp"
+                        android:paddingTop="23dp"
+                        android:textColor="@color/black" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
         </ScrollView>
 
 

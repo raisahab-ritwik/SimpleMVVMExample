@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape
+            android:shape="rectangle">
+
+            <gradient
+                android:angle="90"
+                android:centerColor="#5035FB"
+                android:endColor="#5035FB"
+                android:startColor="#5035FB"
+                android:type="linear" />
+
+            <corners
+                android:radius="21dp" />
+
+        </shape>
+        <!-- #FB0707 -->
+    </item>
+    <item>
+        <shape
+            android:shape="rectangle">
+
+            <gradient
+                android:angle="90"
+                android:centerColor="#377FEE"
+                android:endColor="#2BD5E1"
+                android:startColor="#5035FB"
+                android:type="linear" />
+
+            <corners
+                android:radius="21dp" />
+
+        </shape>
+    </item>
+</selector>

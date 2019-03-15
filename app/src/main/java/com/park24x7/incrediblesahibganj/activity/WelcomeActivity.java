@@ -37,7 +37,7 @@ public class WelcomeActivity extends AppCompatActivity implements ServerResponse
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_welcome_new);
         mContext = WelcomeActivity.this;
         //volleyTaskManager = new VolleyTaskManager(mContext);
     }
@@ -51,7 +51,6 @@ public class WelcomeActivity extends AppCompatActivity implements ServerResponse
             downloadResources();
         }
 
-        //finish();
     }
 
     private void downloadResources() {
@@ -84,7 +83,6 @@ public class WelcomeActivity extends AppCompatActivity implements ServerResponse
 
                 } catch (Exception e) {
                     Log.e("Exception", "Exception: " + e.getLocalizedMessage(), e);
-
                 }
             }
 

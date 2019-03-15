@@ -27,6 +27,6 @@ public class ATMActivity extends AppCompatActivity {
         mContext = ATMActivity.this;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-
+        getSupportActionBar().setTitle("");
     }
 }
