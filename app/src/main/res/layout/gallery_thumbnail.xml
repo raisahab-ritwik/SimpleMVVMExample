@@ -10,5 +10,6 @@
         android:layout_height="match_parent"
         android:layout_margin="7dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_default_image" />
 </com.park24x7.incrediblesahibganj.helper.SquareLayout>

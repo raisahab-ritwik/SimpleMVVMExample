@@ -92,7 +92,7 @@ public class TouristAttractionDB implements DBConstants {
     public ArrayList<ImageClass> getImages(Context context, String touristAtractionID) {
 
         ArrayList<ImageClass> imageArray = new ArrayList<ImageClass>();
-        String[] columns = {_ID, PICTURE_ID, PICTURE, TOURIST_ATTRACTION_ID};
+        String[] columns = {_ID, PICTURE_ID, PICTURE, TOURIST_ATTRACTION_ID, IS_FEATURED};
 
         SQLiteDatabase mdb = SahibgunjDBHelper.getInstance(context).getReadableDatabase();
         Cursor cur = mdb.query(PICTURE_TABLE, columns, TOURIST_ATTRACTION_ID + "=?", new String[]{touristAtractionID}, null, null, null);
@@ -104,6 +104,8 @@ public class TouristAttractionDB implements DBConstants {
                     do {
                         ImageClass image = new ImageClass();
                         image.setBase64value(cur.getString(cur.getColumnIndex(DBConstants.PICTURE)));
+                        image.setIsFeaturedImage(cur.getString(cur.getColumnIndex(DBConstants.IS_FEATURED)));
+                        image.setTouristAttractionID(cur.getString(cur.getColumnIndex(DBConstants.TOURIST_ATTRACTION_ID)));
                         imageArray.add(image);
                     } while (cur.moveToNext());
                 }

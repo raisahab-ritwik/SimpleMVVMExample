@@ -12,7 +12,9 @@ public class ImageClass implements Serializable {
     private boolean isSelected = false;
     private int imageCount = 0;
     private String pictureID = "";
-    private String touristAttractionID="";
+    private String touristAttractionID = "";
+    private int total_image = 0;
+    private String isFeaturedImage = "No";
 
     public int getImageCount() {
         return imageCount;
@@ -76,5 +78,21 @@ public class ImageClass implements Serializable {
 
     public void setTouristAttractionID(String touristAttractionID) {
         this.touristAttractionID = touristAttractionID;
+    }
+
+    public int getTotal_image() {
+        return total_image;
+    }
+
+    public void setTotal_image(int total_image) {
+        this.total_image = total_image;
+    }
+
+    public String getIsFeaturedImage() {
+        return isFeaturedImage;
+    }
+
+    public void setIsFeaturedImage(String isFeaturedImage) {
+        this.isFeaturedImage = isFeaturedImage;
     }
 }

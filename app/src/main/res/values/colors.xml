@@ -6,6 +6,8 @@
 
     <color name="white">#F5F5F5</color>
     <color name="black">#333333</color>
+    <color name="btn_text">#6537AE</color>
+    <color name="btn_back_pressed">#DC4E8A</color>
 
     <!--GREY-->
     <color name="grey_medium">#BDBFC1</color>

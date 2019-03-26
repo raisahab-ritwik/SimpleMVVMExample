@@ -67,7 +67,7 @@ public class SahibgunjDBHelper extends SQLiteOpenHelper implements DBConstants {
         // Picture table -> _id , muId , threadId , image , latitude, longitude , comments , keywords ,
         // address , date , time , schoolCode ,villageName , otherData
         String pictureTableStatement = CREATE_TABLE_BASE + PICTURE_TABLE + START_COLUMN + _ID + INTEGER + PRIMARY_KEY
-                + AUTO_INCREMENT + COMMA + PICTURE_ID + TEXT + COMMA + PICTURE + TEXT + COMMA + TOURIST_ATTRACTION_ID
+                + AUTO_INCREMENT + COMMA + PICTURE_ID + TEXT + COMMA + PICTURE + TEXT + COMMA + IS_FEATURED + TEXT + COMMA + TOURIST_ATTRACTION_ID
                 + TEXT + COMMA + UNIQUE + START_COLUMN + PICTURE_ID + FINISH_COLUMN + ON_CONFLICT_REPLACE + FINISH_COLUMN;
 
         // MEMBERS_DIRECTORY_TABLE --> _id,

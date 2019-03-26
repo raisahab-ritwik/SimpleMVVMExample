@@ -3,35 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".touristattraction.GalleryActivity">
+    android:background="@drawable/bg_landing_activity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             android:background="?attr/colorPrimary"
+             android:theme="@style/AppTheme.AppBarOverlay">
+
+             <ImageButton
+                 android:id="@+id/ibtn_back"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:layout_marginLeft="24dp"
+                 android:background="?attr/selectableItemBackgroundBorderless"
+                 android:src="?attr/homeAsUpIndicator" />
+         </LinearLayout>-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/transparent"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <ImageButton
+            <!--<ImageButton
                 android:id="@+id/ibtn_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="24dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="?attr/homeAsUpIndicator" />
+                android:src="" />-->
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="21dp"
+                android:background="@drawable/white_btn_slelctor"
+                android:gravity="center"
+                android:paddingLeft="41dp"
+                android:paddingRight="41dp"
+                android:text="BACK"
+                android:textColor="@color/btn_text_color" />
         </LinearLayout>
 
 
         <include
             layout="@layout/fragment_gallery"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent" />
     </LinearLayout>
 

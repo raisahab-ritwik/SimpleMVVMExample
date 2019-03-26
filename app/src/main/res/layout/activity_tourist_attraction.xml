@@ -3,84 +3,194 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="13dp">
+    android:background="@drawable/bg_landing_activity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_fts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="7dp">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/blue_gradient_btn_slelctor"
-                android:paddingLeft="21dp"
-                android:paddingRight="21dp"
-                android:text="GPS Navigation"
-                android:textColor="@color/white" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="right"
-                android:background="@drawable/blue_gradient_btn_slelctor"
-                android:onClick="onGalleryClick"
-                android:paddingLeft="21dp"
-                android:paddingRight="21dp"
-                android:text="Image Gallery"
-                android:textColor="@color/white" />
-        </RelativeLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_below="@+id/header"
+            android:layout_marginBottom="23dp"
+            app:cardElevation="@dimen/spacing_xsmall"
+            app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="7dp"
-                android:orientation="vertical">
+                android:layout_marginTop="13dp"
+                android:orientation="vertical"
+                android:padding="13dp">
 
-                <!--<View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/spacing_large" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13dp"
+                    android:background="#ffffff"
+                    android:orientation="horizontal"
+                    android:padding="7dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_tourist_attraction_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/btn_text_color"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleWhite"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:longClickable="false"
+                            app:mrl_rippleRoundedCorners="21dp">
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/btn_selector"
+                                android:onClick="onHistoryClick"
+                                android:text="HISTORY"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:longClickable="false"
+                            app:mrl_rippleRoundedCorners="7dp">
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                android:background="@color/transparent"
+                                android:onClick="onDirectionsClick"
+                                android:text="DIRECTION"
+                                android:textColor="@color/btn_text_color"
+                                android:textStyle="bold" />
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_weight="1"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:longClickable="false"
+                            app:mrl_rippleRoundedCorners="7dp">
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                android:background="@color/transparent"
+                                android:onClick="onGalleryClick"
+                                android:text="PHOTO GALLERY"
+                                android:textColor="@color/btn_text_color"
+                                android:textStyle="bold" />
+                        </com.balysv.materialripple.MaterialRippleLayout>
+                    </LinearLayout>
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="@color/grey_soft" />-->
+                    android:layout_height="1dp"
+                    android:background="@color/btn_text_color"
+                    android:paddingBottom="13dp" />
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_fts"
+                <LinearLayout
+                    android:id="@+id/ll_history"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="13dp"
                     android:layout_marginTop="13dp"
-                    app:cardCornerRadius="@dimen/spacing_medium"
-                    app:cardElevation="@dimen/spacing_xsmall"
-                    app:cardUseCompatPadding="true">
+                    android:background="@color/transparent"
+                    android:orientation="horizontal"
+                    android:padding="7dp"
+                    android:visibility="visible"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:id="@+id/iv_featureImage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.7"
+                        android:background="@color/transparent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_default_image" />
 
                     <TextView
                         android:id="@+id/tv_description"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:layout_weight="1.3"
                         android:paddingBottom="13dp"
                         android:paddingLeft="13dp"
                         android:paddingRight="13dp"
                         android:paddingTop="23dp"
+                        android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@color/black" />
-                </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <include
+                        layout="@layout/image_gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+        </android.support.v7.widget.CardView>
 
+        <include
+            layout="@layout/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
 
-    </LinearLayout>
+    </RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>

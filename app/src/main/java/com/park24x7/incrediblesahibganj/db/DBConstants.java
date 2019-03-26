@@ -7,8 +7,8 @@ public interface DBConstants {
 
     public static final int DB_VERSION = 1; // 7th Sept 2018
 
-    //public static final String DB_NAME = "IncredibleSahibganj.db";
-    public static final String DB_NAME = Environment.getExternalStorageDirectory() + "/IncredibleSahibganj.db"; //This is for debugging purpose only
+    public static final String DB_NAME = "IncredibleSahibganj.db";
+    //public static final String DB_NAME = Environment.getExternalStorageDirectory() + "/IncredibleSahibganj.db"; //This is for debugging purpose only
 
     public static final String _ID = "_id";
 
@@ -58,6 +58,8 @@ public interface DBConstants {
     public static final String PICTURE_ID = "pictureID";
 
     public static final String PICTURE = "picture";
+
+    public static final String IS_FEATURED = "isFeatured";
 
 
     //ATM Table

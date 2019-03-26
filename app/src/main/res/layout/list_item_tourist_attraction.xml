@@ -30,7 +30,6 @@
         android:background="@color/grey_soft" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cv_fts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"

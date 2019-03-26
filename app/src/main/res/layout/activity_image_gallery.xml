@@ -4,8 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_landing_activity"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".touristattraction.GalleryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/transparent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <!--<ImageButton
+            android:id="@+id/ibtn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="" />-->
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="21dp"
+            android:background="@drawable/white_btn_slelctor"
+            android:gravity="center"
+            android:onClick="onBackBtnClick"
+            android:paddingLeft="41dp"
+            android:paddingRight="41dp"
+            android:text="BACK"
+            android:textColor="@color/btn_text_color" />
+    </LinearLayout>
 
     <!--<android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

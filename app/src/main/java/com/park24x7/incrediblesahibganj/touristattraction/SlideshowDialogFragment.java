@@ -9,24 +9,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.park24x7.incrediblesahibganj.R;
 import com.park24x7.incrediblesahibganj.model.Image;
+import com.park24x7.incrediblesahibganj.model.ImageClass;
+import com.park24x7.incrediblesahibganj.util.Util;
 
 import java.util.ArrayList;
 
 
 public class SlideshowDialogFragment extends DialogFragment {
     private String TAG = SlideshowDialogFragment.class.getSimpleName();
-    private ArrayList<Image> images;
+    private ArrayList<ImageClass> images;
     private ViewPager viewPager;
-    private ImageButton ibtn_back;
+    private Button btn_back;
     private MyViewPagerAdapter myViewPagerAdapter;
     private TextView lblCount, lblTitle, lblDate;
     private int selectedPosition = 0;
@@ -44,9 +45,9 @@ public class SlideshowDialogFragment extends DialogFragment {
         lblCount = (TextView) v.findViewById(R.id.lbl_count);
         lblTitle = (TextView) v.findViewById(R.id.title);
         lblDate = (TextView) v.findViewById(R.id.date);
-        ibtn_back = (ImageButton) v.findViewById(R.id.ibtn_back);
+        btn_back = (Button) v.findViewById(R.id.btn_back);
 
-        images = (ArrayList<Image>) getArguments().getSerializable("images");
+        images = (ArrayList<ImageClass>) getArguments().getSerializable("images");
         selectedPosition = getArguments().getInt("position");
 
         Log.e(TAG, "position: " + selectedPosition);
@@ -58,12 +59,13 @@ public class SlideshowDialogFragment extends DialogFragment {
 
         setCurrentItem(selectedPosition);
 
-        ibtn_back.setOnClickListener(new View.OnClickListener() {
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
             }
         });
+
 
         return v;
     }
@@ -95,9 +97,9 @@ public class SlideshowDialogFragment extends DialogFragment {
     private void displayMetaInfo(int position) {
         lblCount.setText((position + 1) + " of " + images.size());
 
-        Image image = images.get(position);
-        lblTitle.setText(image.getName());
-        lblDate.setText(image.getTimestamp());
+        ImageClass image = images.get(position);
+        //lblTitle.setText(image.getName());
+        //lblDate.setText(image.getTimestamp());
     }
 
     @Override
@@ -105,7 +107,7 @@ public class SlideshowDialogFragment extends DialogFragment {
         super.onCreate(savedInstanceState);
       /*  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
-        setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme_ActionBar);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
 
     }
 
@@ -125,13 +127,14 @@ public class SlideshowDialogFragment extends DialogFragment {
 
             ImageView imageViewPreview = (ImageView) view.findViewById(R.id.image_preview);
 
-            Image image = images.get(position);
+            ImageClass image = images.get(position);
 
-            Glide.with(getActivity()).load(image.getLarge())
+            /*Glide.with(getActivity()).load(image.getLarge())
                     .thumbnail(0.5f)
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(imageViewPreview);
+                    .into(imageViewPreview);*/
+            imageViewPreview.setImageBitmap(Util.getBitmapBase64FromString(images.get(position).getBase64value()));
 
             container.addView(view);
 

@@ -3,10 +3,11 @@
     <string name="tourist_attraction">Tourist Attraction</string>
     <string name="atm">ATM(s)</string>
     <string name="hotelsandrestaurants">Hotels &amp; Restaurants</string>
-    <string name="banks">Bank</string>
-    <string name="railway_stn">Railway Station</string>
-    <string name="bus_stop">Bus Stop</string>
-    <string name="cinema_hall">Cinema Hall</string>
+    <string name="banks">Banks</string>
+    <string name="railway_stn">Train Stations</string>
+    <string name="bus_stop">Bus Information</string>
+    <string name="cinema_hall">Cinema Halls</string>
+    <string name="hospitals_pharmacy">Hospitals &amp; Pharmacy</string>
 
 
     <!--Volley Error Messages-->

@@ -2,6 +2,7 @@ package com.park24x7.incrediblesahibganj.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -13,14 +14,15 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.park24x7.incrediblesahibganj.R;
 import com.park24x7.incrediblesahibganj.model.Image;
+import com.park24x7.incrediblesahibganj.model.ImageClass;
+import com.park24x7.incrediblesahibganj.util.Util;
 
 import java.util.List;
 
 
-
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHolder> {
 
-    private List<Image> images;
+    private List<ImageClass> images;
     private Context mContext;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -33,9 +35,10 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
     }
 
 
-    public GalleryAdapter(Context context, List<Image> images) {
+    public GalleryAdapter(Context context, List<ImageClass> images) {
         mContext = context;
         this.images = images;
+        Log.e("Image", "Image Size: " + images.size());
     }
 
     @Override
@@ -48,13 +51,13 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Image image = images.get(position);
-
-        Glide.with(mContext).load(image.getMedium())
+        ImageClass image = images.get(position);
+        /*Glide.with(mContext).load(image.getMedium())
                 .thumbnail(0.5f)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.thumbnail);
+                .into(holder.thumbnail);*/
+        holder.thumbnail.setImageBitmap(Util.getBitmapBase64FromString(images.get(position).getBase64value()));
     }
 
     @Override
