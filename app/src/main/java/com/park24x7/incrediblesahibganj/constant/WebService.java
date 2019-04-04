@@ -2,7 +2,8 @@ package com.park24x7.incrediblesahibganj.constant;
 
 public class WebService {
 
-    public static final String BASE_URL = "http://192.168.1.9/kiosk/wtos/";
+    public static final String BASE_URL = "http://park24x7.com/kiosk/wtos/";
+    //public static final String BASE_URL = "http://192.168.1.9/kiosk/wtos/";
 
     public static final String TOURIST_ATTRACTION_URL = BASE_URL + "touristattractionDataView.php?touristlist=OK";
 

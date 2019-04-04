@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
@@ -64,8 +65,10 @@ public class WelcomeActivity extends AppCompatActivity implements ServerResponse
     }
 
     private void downloadResources(final View view) {
+        HashMap<String, String> requestMap = new HashMap<>();
+        requestMap.put("deviceType", "android");
 
-        PostWithJsonWebTask.callPostWithStringReqWebtask(WelcomeActivity.this, WebService.TOURIST_ATTRACTION_URL, new HashMap<String, String>(), new ServerResponseStringCallback() {
+        PostWithJsonWebTask.callPostWithStringReqWebtask(WelcomeActivity.this, WebService.TOURIST_ATTRACTION_URL, requestMap, new ServerResponseStringCallback() {
             @Override
             public void onSuccess(String resultString) {
                 Log.e("Response", "Response: " + resultString);
@@ -96,20 +99,23 @@ public class WelcomeActivity extends AppCompatActivity implements ServerResponse
 
                 } catch (Exception e) {
                     Log.e("Exception", "Exception: " + e.getLocalizedMessage(), e);
+                    Toast.makeText(mContext, "Error! Please try again", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void ErrorMsg(VolleyError error) {
             }
-        }, true, Request.Method.GET);
+        }, true, Request.Method.POST);
     }
 
     private static int currentIndex = 0;
 
     private void downloadImages(final View view) {
         pDialog.show();
-        PostWithJsonWebTask.callPostWithStringReqWebtask(WelcomeActivity.this, WebService.TOURIST_IMAGE_URL, new HashMap<String, String>(), new ServerResponseStringCallback() {
+        HashMap<String, String> requestMap = new HashMap<>();
+        requestMap.put("deviceType", "android");
+        PostWithJsonWebTask.callPostWithStringReqWebtask(WelcomeActivity.this, WebService.TOURIST_IMAGE_URL, requestMap, new ServerResponseStringCallback() {
             @Override
             public void onSuccess(String resultString) {
                 Log.e("Response", "Response: " + resultString);
@@ -175,14 +181,16 @@ public class WelcomeActivity extends AppCompatActivity implements ServerResponse
             @Override
             public void ErrorMsg(VolleyError error) {
             }
-        }, false, Request.Method.GET);
+        }, false, Request.Method.POST);
     }
 
     private void downloadRemainingImages(String url, final View view) {
 
 
         if (currentIndex < Util.fetchUserClass(mContext).getTotal_pages()) {
-            PostWithJsonWebTask.callPostWithStringReqWebtask(WelcomeActivity.this, WebService.TOURIST_IMAGE_URL + url, new HashMap<String, String>(), new ServerResponseStringCallback() {
+            HashMap<String, String> requestMap = new HashMap<>();
+            requestMap.put("deviceType", "android");
+            PostWithJsonWebTask.callPostWithStringReqWebtask(WelcomeActivity.this, WebService.TOURIST_IMAGE_URL + url, requestMap, new ServerResponseStringCallback() {
                 @Override
                 public void onSuccess(String resultString) {
                     Log.e("Response", "Response: " + resultString);
@@ -247,7 +255,7 @@ public class WelcomeActivity extends AppCompatActivity implements ServerResponse
                 @Override
                 public void ErrorMsg(VolleyError error) {
                 }
-            }, false, Request.Method.GET);
+            }, false, Request.Method.POST);
         } else {
             pDialog.dismiss();
             UserClass userClass = Util.fetchUserClass(mContext);

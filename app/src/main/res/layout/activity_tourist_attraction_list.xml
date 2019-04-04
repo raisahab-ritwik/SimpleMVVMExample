@@ -4,14 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_landing_activity"
-    android:padding="13dp">
+    >
 
     <LinearLayout
         android:id="@+id/ll_tourist_attraction_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+<!--
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,6 +74,7 @@
                 android:textColor="@color/btn_text_color"
                 android:visibility="visible" />
         </RelativeLayout>
+-->
 
         <GridView
             android:id="@+id/lv_tourist_attraction"

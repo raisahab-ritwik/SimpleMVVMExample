@@ -138,8 +138,8 @@
                     android:id="@+id/ll_history"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="13dp"
                     android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
                     android:background="@color/transparent"
                     android:orientation="horizontal"
                     android:padding="7dp"
@@ -162,12 +162,24 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="13dp"
                         android:layout_weight="1.3"
-                        android:paddingBottom="13dp"
                         android:paddingLeft="13dp"
-                        android:paddingRight="13dp"
                         android:paddingTop="23dp"
+                        android:paddingRight="13dp"
+                        android:paddingBottom="13dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <include
+                        layout="@layout/activity_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -181,6 +193,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
+
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
